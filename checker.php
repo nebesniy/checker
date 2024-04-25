@@ -14,7 +14,7 @@ $word = isset($_GET["word"]) ? urldecode($_GET["word"]) : null;
 // Проверка существования и валидности URL
 // Checking the existence and validity of a URL
 if (!$url || filter_var($url, FILTER_VALIDATE_URL) === false) {
-    die("URL не валиден");
+    exit("URL не валиден / Invalid URL");
 }
 
 // Получение содержимого URL с помощью cURL
