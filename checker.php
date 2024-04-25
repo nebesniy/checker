@@ -6,8 +6,8 @@ ini_set('display_startup_errors', 0);
 error_reporting(0);
 
 // Проверка наличия и получение параметров url и word из GET-запроса
-$url = isset($_GET["url"]) ? urldecode($_GET["url"]) : null;
-$word = isset($_GET["word"]) ? urldecode($_GET["word"]) : null;
+$url = isset($_GET["url"]) ? urldecode($_GET["url"]) : die("Missing url parameter");
+$word = isset($_GET["word"]) ? urldecode($_GET["word"]) : die("Missing word parameter");
 
 // Проверка существования и валидности URL
 if (!$url || filter_var($url, FILTER_VALIDATE_URL) === false) {
